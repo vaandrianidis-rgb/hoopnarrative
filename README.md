@@ -46,10 +46,10 @@ Sample scripts will be available soon.
 ## Contact
 
 📧 Email  
-YOUR_EMAIL@gmail.com
+vaandrianidis@gmail.com
 
 📸 Instagram  
-https://instagram.com/YOUR_USERNAME
+https://instagram.com/_vaggelisn
 
 ---
 
