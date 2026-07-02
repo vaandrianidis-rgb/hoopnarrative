@@ -1,1 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>The Rose That Never Bloomed | HoopNarrative</title>
+
+  <meta
+    name="description"
+    content="A documentary-style NBA script sample by HoopNarrative about Derrick Rose, lost greatness, injuries, legacy, and one of basketball's most emotional what-if stories."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top right, rgba(220, 38, 38, 0.20), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(127, 29, 29, 0.20), transparent 35%),
+        #050505;
+      color: #f5f5f5;
+    }
+
+    .sample-page {
+      min-height: 100vh;
+      padding: 32px 7vw 80px;
+    }
+
+    .sample-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .sample-logo {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.15rem;
+    }
+
+    .sample-logo span {
+      color: #ef4444;
+    }
+
+    .back-link {
+      color: #d4d4d4;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 10px 16px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+      border-color: rgba(239, 68, 68, 0.7);
+      background: rgba(239, 68, 68, 0.08);
+    }
+
+    .sample-hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .eyebrow {
+      color: #ef4444;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .sample-hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      margin: 0 0 28px;
+      max-width: 900px;
+    }
+
+    .sample-hero h1 span {
+      color: #ef4444;
+    }
+
+    .sample-subtitle {
+      color: #d4d4d4;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.7;
+      max-width: 700px;
+      margin-bottom: 34px;
+    }
+
+    .sample-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .sample-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .sample-btn.primary {
+      background: #ef4444;
+      color: #050505;
+    }
+
+    .sample-btn.primary:hover {
+      transform: translateY(-2px);
+      background: #f87171;
+    }
+
+    .sample-btn.secondary {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sample-btn.secondary:hover {
+      border-color: rgba(239, 68, 68, 0.7);
+      background: rgba(239, 68, 68, 0.08);
+    }
+
+    .rose-card {
+      position: relative;
+      min-height: 520px;
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background:
+        radial-gradient(circle at center, rgba(239, 68, 68, 0.35), transparent 34%),
+        linear-gradient(145deg, rgba(127, 29, 29, 0.35), rgba(10, 10, 10, 0.95));
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+    }
+
+    .rose-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+      -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    .rose-card-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 34px;
+      z-index: 2;
+    }
+
+    .rose-label {
+      align-self: flex-start;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fecaca;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+    }
+
+    .rose-symbol {
+      font-size: 11rem;
+      line-height: 1;
+      filter: drop-shadow(0 30px 60px rgba(239, 68, 68, 0.35));
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .rose-card-bottom h2 {
+      font-size: 2.6rem;
+      line-height: 0.95;
+      margin: 0 0 12px;
+      letter-spacing: -0.06em;
+    }
+
+    .rose-card-bottom p {
+      color: #d4d4d4;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .sample-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 80px;
+    }
+
+    .sample-stat {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .sample-stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .sample-stat span {
+      color: #a3a3a3;
+      font-size: 0.95rem;
+    }
+
+    .sample-section {
+      max-width: 980px;
+      margin: 0 auto 80px;
+    }
+
+    .sample-section h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: -0.06em;
+      margin: 0 0 20px;
+    }
+
+    .sample-section p {
+      color: #d4d4d4;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .script-box {
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 30px;
+      padding: clamp(26px, 5vw, 52px);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .script-box p {
+      color: #f5f5f5;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .script-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .chapters {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .chapter {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .chapter-number {
+      color: #ef4444;
+      font-weight: 900;
+      min-width: 42px;
+    }
+
+    .chapter-title {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .cta-box {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(32px, 6vw, 58px);
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(255, 255, 255, 0.045)),
+        rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.06em;
+      margin: 0 0 18px;
+    }
+
+    .cta-box p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: #d4d4d4;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .sample-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .sample-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .rose-card {
+        min-height: 440px;
+      }
+
+      .rose-symbol {
+        font-size: 8rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .sample-page {
+        padding: 24px 5vw 64px;
+      }
+
+      .sample-nav {
+        margin-bottom: 48px;
+      }
+
+      .back-link {
+        font-size: 0.82rem;
+        padding: 9px 12px;
+      }
+
+      .sample-actions {
+        flex-direction: column;
+      }
+
+      .sample-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="sample-page">
+    <nav class="sample-nav">
+      <a href="index.html" class="sample-logo"><span>HN</span> HoopNarrative</a>
+      <a href="index.html#portfolio" class="back-link">Back to Portfolio</a>
+    </nav>
+
+    <section class="sample-hero">
+      <div>
+        <p class="eyebrow">Documentary Script Sample</p>
+
+        <h1>
+          The Rose That Never Bloomed:
+          <span>The Saddest Story in NBA History</span>
+        </h1>
+
+        <p class="sample-subtitle">
+          A cinematic YouTube script sample built around emotion, pacing, retention,
+          and the painful question every basketball fan still asks:
+          what could Derrick Rose have become?
+        </p>
+
+        <div class="sample-actions">
+          <a href="#sample" class="sample-btn primary">Read Sample Opening</a>
+          <a href="mailto:vaandrianidis@gmail.com" class="sample-btn secondary">Work With Me</a>
+        </div>
+      </div>
+
+      <aside class="rose-card">
+        <div class="rose-card-content">
+          <div class="rose-label">THE LOST MVP</div>
+
+          <div class="rose-symbol">🌹</div>
+
+          <div class="rose-card-bottom">
+            <h2>Greatness interrupted.</h2>
+            <p>
+              Not a story about failure. A story about seeing the future —
+              and watching it disappear in real time.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sample-stats">
+      <div class="sample-stat">
+        <strong>YouTube Documentary</strong>
+        <span>Written for long-form basketball storytelling.</span>
+      </div>
+
+      <div class="sample-stat">
+        <strong>Emotional Hook</strong>
+        <span>Designed to pull viewers in from the first line.</span>
+      </div>
+
+      <div class="sample-stat">
+        <strong>Retention Focused</strong>
+        <span>Structured with tension, payoff, and chapter momentum.</span>
+      </div>
+    </section>
+
+    <section class="sample-section">
+      <p class="eyebrow">Creative Direction</p>
+
+      <h2>This is not just a career recap.</h2>
+
+      <p>
+        This sample is written to feel like a real YouTube documentary:
+        cinematic, emotional, clear, and easy for a voice-over artist to perform.
+        The goal is not only to explain Derrick Rose’s career — it is to make the
+        viewer feel why his story still hurts.
+      </p>
+    </section>
+
+    <section class="sample-section" id="sample">
+      <p class="eyebrow">Script Opening</p>
+
+      <div class="script-box">
+        <p>
+          Derrick Rose didn’t just lose games.
+          He lost the future people had already imagined for him.
+        </p>
+
+        <p>
+          At 22 years old, he was the youngest MVP in NBA history.
+          Chicago had hope again. Defenders were afraid of his first step
+          before he even made a move. And for one short moment, it felt like
+          the league had found its next face.
+        </p>
+
+        <p>
+          But the cruelest part of Derrick Rose’s story isn’t that he got hurt.
+        </p>
+
+        <p>
+          It’s that we saw just enough to know how great he could have been.
+        </p>
+
+        <p>
+          We saw the speed. The violence. The impossible finishes.
+          We saw a player who attacked the rim like gravity was only a suggestion.
+          We saw a city believe again.
+        </p>
+
+        <p>
+          And then, almost overnight, the story changed.
+        </p>
+
+        <p>
+          This is not the story of a player who failed.
+          This is the story of a player whose prime was taken before it ever fully arrived.
+        </p>
+
+        <p>
+          This is the story of the Rose that never bloomed.
+        </p>
+      </div>
+    </section>
+
+    <section class="sample-section">
+      <p class="eyebrow">Chapter Breakdown</p>
+
+      <h2>How the full script would be structured.</h2>
+
+      <div class="chapters">
+        <div class="chapter">
+          <span class="chapter-number">01</span>
+          <span class="chapter-title">Chicago’s Chosen One</span>
+        </div>
+
+        <div class="chapter">
+          <span class="chapter-number">02</span>
+          <span class="chapter-title">The Youngest MVP Ever</span>
+        </div>
+
+        <div class="chapter">
+          <span class="chapter-number">03</span>
+          <span class="chapter-title">The Night Everything Changed</span>
+        </div>
+
+        <div class="chapter">
+          <span class="chapter-number">04</span>
+          <span class="chapter-title">Learning to Play Without His Superpower</span>
+        </div>
+
+        <div class="chapter">
+          <span class="chapter-number">05</span>
+          <span class="chapter-title">The 50-Point Resurrection</span>
+        </div>
+
+        <div class="chapter">
+          <span class="chapter-number">06</span>
+          <span class="chapter-title">What Derrick Rose Really Means</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-box">
+      <h2>Need a script that feels like a real story?</h2>
+
+      <p>
+        I write documentary-style NBA scripts for creators who want stronger hooks,
+        cleaner storytelling, emotional pacing, and videos that feel worth watching
+        until the final line.
+      </p>
+
+      <div class="sample-actions" style="justify-content: center;">
+        <a href="mailto:vaandrianidis@gmail.com" class="sample-btn primary">Email Me</a>
+        <a href="https://instagram.com/_vaggelisn" class="sample-btn secondary">Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
