@@ -253,6 +253,7 @@ a {
 }
 
 .script-preview {
+  position: relative;
   min-height: 520px;
   display: flex;
   flex-direction: column;
